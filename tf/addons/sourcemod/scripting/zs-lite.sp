@@ -53,7 +53,7 @@ public Action EndSetup(Handle timer, LocalVerifier){
 public Action MakeRedWin(Handle timer, int LocalVerifier){
   if(GlobalVerifier == LocalVerifier){
     int win = CreateEntityByName("game_round_win");
-    SetVariantInt(3);
+    SetVariantInt(2);
     AcceptEntityInput(win, "SetTeam");
     AcceptEntityInput(win, "RoundWin");
     DispatchSpawn(win);
@@ -69,6 +69,7 @@ public void PickRandomZombie(){
   }
   // this code below will only have ran once we have picked a player in that slot
   TF2_ChangeClientTeam(client, TFTeam_Blue);
+  TF2_RespawnPlayer(client);
 }
 public Action teamplay_round_start(Event event, const char[] name, bool dontBroadcast){
   setup = true;
@@ -109,8 +110,13 @@ public Action player_death(Event event, const char[] name, bool dontBroadcast){
   int client = GetClientOfUserId(event.GetInt("userid"));
   if(!setup){ // don't do any of this if it's setup
     TF2_ChangeClientTeam(client, TFTeam_Blue); // move dead players to blue
+    TF2_RespawnPlayer(client);
     if(GetTeamClientCount(2) == 0){
-      ServerCommand("sv_cheats 1;mp_forcewin 3;sv_cheats 0"); // if red is empty, make blue win
+      int win = CreateEntityByName("game_round_win");
+      SetVariantInt(3);
+      AcceptEntityInput(win, "SetTeam");
+      AcceptEntityInput(win, "RoundWin");
+      DispatchSpawn(win);
     }
   }
 }

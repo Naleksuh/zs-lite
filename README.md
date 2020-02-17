@@ -1,12 +1,3 @@
-  ______ _____   _      _ _         _             _   _       _      _              _
- |___  // ____| | |    (_) |       | |           | \ | |     | |    | |            | |
-    / /| (___   | |     _| |_ ___  | |__  _   _  |  \| | __ _| | ___| | _____ _   _| |__
-   / /  \___ \  | |    | | __/ _ \ | '_ \| | | | | . ` |/ _` | |/ _ \ |/ / __| | | | '_ \
-  / /__ ____) | | |____| | ||  __/ | |_) | |_| | | |\  | (_| | |  __/   <\__ \ |_| | | | |
- /_____|_____/  |______|_|\__\___| |_.__/ \__, | |_| \_|\__,_|_|\___|_|\_\___/\__,_|_| |_|
-                                           __/ |
-                                          |___/
-
 This plugin aims to give new server owners something to run if they wish to create a zombie server.
 My main zombie plugin which I've spent over half a year perfecting and refining is not publicly
 available to download for obvious reasons, but this plugin will allow you to run a very basic zombie server

@@ -41,7 +41,25 @@ public void OnPluginStart(){
   HookEvent("player_team", player_team, EventHookMode_Post);
   // "hook" some events. when certain things happen in the game, tf2 will call these events, and this plugin makes use of them
   // to make certain things happen when those events are called.
+
+  RegConsoleCmd("spectate", Removed);
+  RegConsoleCmd("autoteam", Removed); // block out spectate and autoteam commands used for exploiting
+  RegConsoleCmd("build", Build);
 }
+
+public Action Removed(int client, int args){
+  return Plugin_Handled;
+}
+
+public Action Build(int client, int args){
+  char arg[5];
+  GetCmdArg(1, arg, sizeof(arg));
+  if(StringToInt(arg) == 2){
+    return Plugin_Handled;
+  }
+  return Plugin_Changed;
+}
+
 public Action EndSetup(Handle timer, LocalVerifier){
   if(GlobalVerifier == LocalVerifier){ // avoid double timers
    setup = false;

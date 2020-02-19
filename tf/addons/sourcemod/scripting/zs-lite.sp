@@ -140,7 +140,7 @@ public Action player_death(Event event, const char[] name, bool dontBroadcast){
 }
 
 public Action player_team(Event event, const char[] name, bool dontBroadcast){
-  if(event.GetInt("team") == 2 && !setup){ // if they are try rejoin red after setup is over
+  if(event.GetInt("team") != 3 && !setup){ // if they are try rejoin red after setup is over
     TF2_ChangeClientTeam(GetClientOfUserId(event.GetInt("userid")), TFTeam_Blue); // move them back to blue
   }
 }

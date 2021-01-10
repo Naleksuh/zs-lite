@@ -14,7 +14,7 @@ available to download for obvious reasons, but this plugin will allow you to run
 to get you started, or learning to create your own plugins. I have tried to describe what all lines
 of code do in the best detail I can.
 
-My main zombie server can be found running on the IP address 74.91.114.23:27015, and it contains
+My main zombie server can be found running on the IP address pvp1.zs.naleksuh.com, and it contains
 the following features not found here:
 
 * Zombies are picked before setup ends
@@ -91,7 +91,7 @@ public void PickRandomZombie(){
 }
 public Action teamplay_round_start(Event event, const char[] name, bool dontBroadcast){
   setup = true;
-  GlobalVerifier = GetRandomInt(1, 999999999); // used for avoiding double timers. this is used over handles as it allows the most options but with control
+  GlobalVerifier = GetCurrentTickCount(); // used for avoiding double timers. this is used over handles as it allows the most options but with control
   CreateTimer(60.0, EndSetup, GlobalVerifier); // turn off setup 60 seconds from now, effectively making a 60 seconds setup
   CreateTimer(300.0, MakeRedWin, GlobalVerifier);
   for(int client = 1 ; client <= MaxClients ; client++ ){ // this loops through every possible player in the server

@@ -92,7 +92,7 @@ public void PickRandomZombie(){
 }
 public Action teamplay_round_start(Event event, const char[] name, bool dontBroadcast){
   setup = true;
-  GlobalVerifier = GetCurrentTickCount(); // used for avoiding double timers. this is used over handles as it allows the most options but with control
+  GlobalVerifier = GetGameTickCount(); // used for avoiding double timers. this is used over handles as it allows the most options but with control
   CreateTimer(60.0, EndSetup, GlobalVerifier); // turn off setup 60 seconds from now, effectively making a 60 seconds setup
   CreateTimer(300.0, MakeRedWin, GlobalVerifier);
   for(int client = 1 ; client <= MaxClients ; client++ ){ // this loops through every possible player in the server

@@ -4,7 +4,7 @@ available to download for obvious reasons, but this plugin will allow you to run
 to get you started, or learning to create your own plugins. I have tried to describe what all lines
 of code do in the best detail I can.
 
-My main zombie server can be found running on the IP address 162.248.93.173:27015, and it contains
+My main zombie server can be found running on the IP address pvp1.zs.naleksuh.com, and it contains
 the following features not found here:
 
 * Zombies are picked before setup ends

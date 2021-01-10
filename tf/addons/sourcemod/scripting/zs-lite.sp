@@ -25,6 +25,7 @@ the following features not found here:
 * Maps do not have dead ends (for instance you will not have a fun time playing cp_5gorge with this plugin)
 * Queued algorithm that can pick multiple zombies fairly instead of a single zombie at random
 * Bots to allow you to play even when the server is empty
+* Occasional fixed server crashes that this plugin may crash
 * And so many more things! But it doesn't mean this plugin is *bad*, I've simply created this to allow starting server owners to get started without either
 having to learn SourcePawn themselves or giving away years of code
 */

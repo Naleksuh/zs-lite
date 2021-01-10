@@ -65,7 +65,7 @@ public Action EndSetup(Handle timer, LocalVerifier){
   if(GlobalVerifier == LocalVerifier){ // avoid double timers
    setup = false;
    if(GetClientCount(true) > 1){ // if there is only one person on the server it'll just pick them as zombie meaning blue instantly wins 60 seconds into the round
-     PickRandomZombie(); // this is a custom function defined later on line 81
+     PickRandomZombie(); // this is a custom function defined later on line 82
    }
   }
 }
